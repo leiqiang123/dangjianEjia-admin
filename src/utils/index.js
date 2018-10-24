@@ -2,8 +2,10 @@ import axios from 'axios'
 import router from '../router'
 import {Message} from 'element-ui'
 
+const baseURL = process.env.BASE_API
+
 const instance = axios.create({
-    baseURL:'/api',
+    baseURL,
     timeout:15000
 })
 

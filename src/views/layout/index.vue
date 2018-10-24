@@ -23,15 +23,20 @@
                         <template slot="title">用户管理</template>
                         <el-menu-item index="/layout/index">首页</el-menu-item>
                         <el-menu-item index="/">登录页</el-menu-item>
-                        <el-menu-item index="/layout/user">用户信息页</el-menu-item>
+                        <el-menu-item index="/layout/user">管理员列表页</el-menu-item>
                         <el-menu-item index="/layout/addUser">添加管理员</el-menu-item>
                     </el-menu-item-group>
                 </el-submenu>
                 <el-submenu index="2">
                     <template slot="title">
                         <i class="el-icon-location"></i>
-                        <span>分类管理</span>
+                        <span>新闻管理</span>
                     </template>
+                    <el-menu-item-group>
+                        <template slot="title">新闻管理</template>
+                        <el-menu-item index="/layout/news">新闻列表页</el-menu-item>
+                        <el-menu-item index="/layout/addNews">添加新闻</el-menu-item>
+                    </el-menu-item-group>
                 </el-submenu>
             </el-menu>
         </div>

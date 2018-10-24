@@ -28,6 +28,14 @@ export default new Router({
         {
           path:'addUser',
           component: () => import('../views/users/addUser')
+        },
+        {
+          path:'news',
+          component: () => import('../views/news/news')
+        },
+        {
+          path:'addNews',
+          component: () => import('../views/news/addNews')
         }
       ]
     }
