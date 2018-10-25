@@ -7,6 +7,7 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import $axios from './utils'
 import store from './store'
+// import upLoad from './components/upload'
 
 Vue.use(ElementUI);
 Vue.prototype.$axios = $axios

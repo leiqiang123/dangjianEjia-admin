@@ -44,7 +44,7 @@
         methods: {
             getUserData() {
                 this.$axios.get('/user').then(res => {
-                    console.log(res.data)
+                    // console.log(res.data)
                     this.tableData = res.data
                 })
             }

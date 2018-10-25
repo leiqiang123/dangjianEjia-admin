@@ -34,7 +34,7 @@
         methods: {
             handleLogin () {
                 this.$axios.post('/login',this.userInfo).then(res => {
-                    console.log(res)
+                    // console.log(res)
                     if(res.code == 200){
                         this.$message.success('登录成功')
                         this.$store.commit('CHANGE_USERINFO',res.userData)

@@ -26,7 +26,7 @@
                     <el-form-item label="新闻图片:" required>
                         <upLoad v-model="newsData.img"></upLoad>
                     </el-form-item>
-                    <el-form-item label="新闻内容">
+                    <el-form-item label="新闻内容" required>
                         <quill-editor
                             v-model="newsData.content"
                             ref="myQuillEditor"
@@ -45,7 +45,7 @@
                         </el-select>
                     </el-form-item>
                     <el-form-item>
-                        <el-button type="primary">立即添加</el-button>
+                        <el-button type="primary" @click="handleAdd">立即添加</el-button>
                     </el-form-item>
                 </el-form>
             </div>
@@ -121,13 +121,22 @@
                 })
             },
             editChange({quil, html, text}) {
-                // console.log(html,2)  
-                // console.log(text,3)
-            }  
+                this.newsData.content = html
+                this.newsData.contentText = text
+            },
+            handleAdd() {
+                // console.log(this.newsData)
+                this.$axios.post('/news', this.newsData).then(res => {
+                    if(res.code = 200){
+                        this.$message.success(res.msg)
+                        this.$router.push('/layout/news')
+                    }
+                })
+            }
         },
         created() {
-            // this.getCategoryData()
-            // this.getUserData()
+            this.getCategoryData()
+            this.getUserData()
             this.getToken()
         }
     }

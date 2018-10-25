@@ -36,6 +36,18 @@ export default new Router({
         {
           path:'addNews',
           component: () => import('../views/news/addNews')
+        },
+        {
+          path:'addNewsCategory',
+          component: () => import('../views/news/addNewsCategory')
+        },
+        {
+          path:'swiper',
+          component: () => import('../views/swiper/swiper')
+        },
+        {
+          path:'addSwiper',
+          component: () => import('../views/swiper/addSwiper')
         }
       ]
     }

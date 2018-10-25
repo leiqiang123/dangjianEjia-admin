@@ -24,9 +24,9 @@ const xhr = {
             })
         })
     },
-    post (url, data, config) {
+    fetch (url, data, config, methods){
         return new Promise((resolve, reject) => {
-            instance.post(url, data, config).then(res => {
+            instance[methods](url, data, config).then(res => {
                 if(res.data.code == 403){
                     Message.info('登录过期，请重新登录')
                     router.push('/')
@@ -37,6 +37,12 @@ const xhr = {
                 reject(err)
             })
         })
+    },
+    post (url, data, config) {
+        return this.fetch(url, data, config, 'post')
+    },
+    patch (url, data, config) {
+        return this.fetch(url, data, config, 'patch')
     }
 }
 
